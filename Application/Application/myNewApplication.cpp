@@ -1,9 +1,11 @@
 #include "myNewApplication.h"
+#include "SceneManager.h"
 
 
 namespace Nmy
-{
-	NewApplication NewApplication::mInstance;
+{/*
+	NewApplication NewApplication::mInstance;*/
+	// 싱글톤 단점 메모리소멸자가 호출되지 않음
 
 	Nmy::NewApplication::NewApplication()
 	{
@@ -20,6 +22,7 @@ namespace Nmy
 	{
 		mWindowdata = data;
 		mWindowdata.hdc = GetDC(data.hWnd);
+
 	}
 
 	void Nmy::NewApplication::Tick()

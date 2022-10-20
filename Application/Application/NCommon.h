@@ -6,6 +6,7 @@
 #include <map>
 #include <list>
 
+#include "def.h"
 #include "Maths.h"
 
 // typedef Pos POINT;

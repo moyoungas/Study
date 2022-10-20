@@ -25,6 +25,9 @@
     <Filter Include="NewEngine">
       <UniqueIdentifier>{9276a856-16a0-4982-b697-ab72b0bc6e4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{181feb92-8aca-4541-8652-d2fd4ec3c980}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -51,6 +54,18 @@
     <ClInclude Include="NmyEntity.h">
       <Filter>NewEngine</Filter>
     </ClInclude>
+    <ClInclude Include="NmyScene.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyLogoScene.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Application.rc">
@@ -75,5 +90,22 @@
     <ClCompile Include="NmyEntity.cpp">
       <Filter>NewEngine</Filter>
     </ClCompile>
+    <ClCompile Include="NmyScene.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyLogoScene.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="def.h">
+      <Filter>NewEngine</Filter>
+    </None>
   </ItemGroup>
 </Project>
