@@ -4,18 +4,20 @@
 
 namespace Nmy
 {
+	class Scene;
 
 	class SceneManager
 	{
 	public:
 
-		void Initialize();
-		void Tick();
-		void Render(HDC hdc);
+		static void Initialize();
+		static void Tick();
+		static void Render(HDC hdc);
+		static void Release();
 
 	private:
-
-		Scene* mScene[(UINT)eSceneType::MAX];
+		static Scene* mScene[(UINT)eSceneType::MAX];
+		static Scene* mPlayScene;
 
 	};
 

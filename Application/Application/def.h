@@ -2,9 +2,11 @@
 
 enum class eSceneType
 {
+
+	Logo,
 	Title,
 	Play,
-	Ending,
+	End,
 	MAX,
 
 };

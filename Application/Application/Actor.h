@@ -10,8 +10,10 @@ namespace Nmy
 		Actor();
 		~Actor();
 
+
+		virtual void Initialize();
 		virtual void Tick();
-		virtual void Render();
+		virtual void Render(HDC hdc);
 
 		void SetPos(Vector2 pos) { mPos = pos; }
 		Vector2 GetPos() { return mPos; }

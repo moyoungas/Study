@@ -28,6 +28,18 @@
     <Filter Include="Manager">
       <UniqueIdentifier>{181feb92-8aca-4541-8652-d2fd4ec3c980}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NewEngine\Common">
+      <UniqueIdentifier>{952d61c6-432d-4e12-8363-8454bdcdaa18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{5e272e0c-006a-4f7e-b781-38b64129e657}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actor">
+      <UniqueIdentifier>{222fcf90-ab1d-4cd9-a4f5-35875f62bb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actor\base">
+      <UniqueIdentifier>{67ee0a19-b6a6-45af-a558-ede16b59ce13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -45,26 +57,29 @@
     <ClInclude Include="myNewApplication.h">
       <Filter>NewEngine</Filter>
     </ClInclude>
-    <ClInclude Include="NCommon.h">
-      <Filter>NewEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Maths.h">
-      <Filter>NewEngine</Filter>
-    </ClInclude>
     <ClInclude Include="NmyEntity.h">
       <Filter>NewEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="NmyScene.h">
-      <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>Manager</Filter>
+    <ClInclude Include="Maths.h">
+      <Filter>NewEngine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="NCommon.h">
+      <Filter>NewEngine\Common</Filter>
     </ClInclude>
     <ClInclude Include="NmyLogoScene.h">
-      <Filter>Manager</Filter>
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Actor\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -90,22 +105,25 @@
     <ClCompile Include="NmyEntity.cpp">
       <Filter>NewEngine</Filter>
     </ClCompile>
-    <ClCompile Include="NmyScene.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Actor.cpp">
-      <Filter>Manager</Filter>
-    </ClCompile>
     <ClCompile Include="NmyLogoScene.cpp">
-      <Filter>Manager</Filter>
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Actor\base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="def.h">
-      <Filter>NewEngine</Filter>
+      <Filter>NewEngine\Common</Filter>
     </None>
   </ItemGroup>
 </Project>

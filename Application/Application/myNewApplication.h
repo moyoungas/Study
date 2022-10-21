@@ -11,18 +11,22 @@ namespace Nmy
 	public:
 		static NewApplication& Getinstance()
 		{
+
+			static NewApplication mInstance;
 			return mInstance;
 		}
-
-		NewApplication();
-		~NewApplication();
 
 		void Initialize(WindowDataA data);
 		void Tick();
 
 
 	private:
-		static NewApplication mInstance;
+		NewApplication();
+		~NewApplication();
+
+
+
+	private:
 		WindowDataA mWindowdata;
 
 	};

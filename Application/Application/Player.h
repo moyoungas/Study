@@ -1,27 +1,27 @@
 #pragma once
-#include "NmyScene.h"
-
+#include "Actor.h"
 
 namespace Nmy
 {
 
-	class LogoScene : public Scene
+	class Player : public Actor
 	{
 	public:
-		LogoScene();
-		~LogoScene();
-
-
-		virtual void Initialize() override;
+		Player();
+		~Player();
+		
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
 
 
 
 	private:
-
+		float mSpeed;
 
 	};
 
+
+
 }
+
 

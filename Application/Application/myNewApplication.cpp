@@ -7,28 +7,31 @@ namespace Nmy
 	NewApplication NewApplication::mInstance;*/
 	// 싱글톤 단점 메모리소멸자가 호출되지 않음
 
-	Nmy::NewApplication::NewApplication()
-	{
-
-		mWindowdata.clear();
-	}
-
-	Nmy::NewApplication::~NewApplication()
-	{
-		ReleaseDC(mWindowdata.hWnd, mWindowdata.hdc);
-	}
-
 	void Nmy::NewApplication::Initialize(WindowDataA data)
 	{
 		mWindowdata = data;
 		mWindowdata.hdc = GetDC(data.hWnd);
 
+		SceneManager::Initialize();
+
 	}
 
 	void Nmy::NewApplication::Tick()
 	{
+		SceneManager::Tick();
+		SceneManager::Render(mWindowdata.hdc);
 	}
 
+	Nmy::NewApplication::NewApplication()
+	{
+		mWindowdata.clear();
+	}
+
+	Nmy::NewApplication::~NewApplication()
+	{
+		SceneManager::Release();
+		ReleaseDC(mWindowdata.hWnd, mWindowdata.hdc);
+	}
 
 }
 
