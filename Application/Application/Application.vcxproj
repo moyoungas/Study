@@ -134,22 +134,26 @@
     <ClInclude Include="myNewApplication.h" />
     <ClInclude Include="NCommon.h" />
     <ClInclude Include="NmyEntity.h" />
+    <ClInclude Include="NmyInput.h" />
     <ClInclude Include="NmyLogoScene.h" />
     <ClInclude Include="NmyScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myNewApplication.cpp" />
     <ClCompile Include="NmyEntity.cpp" />
+    <ClCompile Include="NmyInput.cpp" />
     <ClCompile Include="NmyLogoScene.cpp" />
     <ClCompile Include="NmyScene.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Application.rc" />

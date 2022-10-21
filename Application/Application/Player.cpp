@@ -1,4 +1,6 @@
 #include "Player.h"
+#include "Time.h"
+#include "NmyInput.h"
 
 Nmy::Player::Player() 
 	: mSpeed(1.0f)
@@ -15,21 +17,21 @@ void Nmy::Player::Tick()
 {
 	Vector2 pos = GetPos();
 
-	if (GetAsyncKeyState('W') & 0x8000)
+	if (Input::GetKeystate(eKeyCode::W) == eKeyState::PRESSED)
 	{
-		pos.y -= 0.01f;
+		pos.y -= 200.0f * Time::DeltaTime();
 	}
-	if (GetAsyncKeyState('A') & 0x8000)
+	if (Input::GetKeystate(eKeyCode::S) == eKeyState::UP)
 	{
-		pos.x -= 0.01f;
+		pos.x -= 200.0f * Time::DeltaTime();
 	}
-	if (GetAsyncKeyState('S') & 0x8000)
+	if (Input::GetKeystate(eKeyCode::A) == eKeyState::PRESSED)
 	{
-		pos.y += 0.01f;
+		pos.y += 200.0f * Time::DeltaTime();
 	}
-	if (GetAsyncKeyState('D') & 0x8000)
+	if (Input::GetKeystate(eKeyCode::D) == eKeyState::DOWN)
 	{
-		pos.x += 0.01f;
+		pos.x += 200.0f * Time::DeltaTime();
 	}
 	SetPos(pos);
 

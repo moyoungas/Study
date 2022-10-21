@@ -8,7 +8,7 @@ namespace Nmy
 	{
 	public:
 		Actor();
-		~Actor();
+		virtual ~Actor();
 
 
 		virtual void Initialize();
