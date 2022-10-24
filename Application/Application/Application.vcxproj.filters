@@ -87,6 +87,15 @@
     <ClInclude Include="NmyInput.h">
       <Filter>Actor\base</Filter>
     </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Drop.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="DropManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Application.rc">
@@ -131,6 +140,15 @@
     </ClCompile>
     <ClCompile Include="NmyInput.cpp">
       <Filter>Actor\base</Filter>
+    </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Drop.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="DropManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

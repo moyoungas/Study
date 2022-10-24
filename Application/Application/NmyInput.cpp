@@ -6,26 +6,28 @@ namespace Nmy
 
 	int ASCII[(UINT)eKeyCode::END] =
 	{
-		'Q', 'W', 'E', 'R',
-		'T', 'Y', 'U', 'I',
-		'O', 'P', 'A', 'S',
-		'D', 'F', 'G', 'H',
-		'J', 'K', 'Z', 'X',
-		'C', 'V', 'B', 'N',
+		'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
+		'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'K',
+		'Z', 'X', 'C', 'V', 'B', 'N', 'M',
 
-		// SPCIAL KEY
-		VK_RETURN, VK_ESCAPE , VK_LSHIFT, VK_LMENU,
-		VK_LCONTROL, VK_SPACE, VK_LEFT, VK_RIGHT, VK_UP , VK_DOWN,
+		//		//Special Key
+		//ENTER, ESC, LSHIFT, LALT, LCTRL,
+		//SPACE, LEFT, RIGHT, UP, DOWN,
+		//LBTN, RBTN,
+
+		VK_RETURN, VK_ESCAPE, VK_LSHIFT, VK_LMENU, VK_LCONTROL,
+		VK_SPACE, VK_LEFT, VK_RIGHT, VK_UP, VK_DOWN,
 		VK_LBUTTON, VK_RBUTTON,
 
-		// NUMBER PAD
-		VK_NUMPAD0, VK_NUMPAD1, VK_NUMPAD2, VK_NUMPAD3,
-		VK_NUMPAD4, VK_NUMPAD5, VK_NUMPAD6, VK_NUMPAD7,
-		VK_NUMPAD8, VK_NUMPAD9,
+		////Num Pad
+		VK_NUMPAD0, VK_NUMPAD1, VK_NUMPAD2,
+		VK_NUMPAD3, VK_NUMPAD4, VK_NUMPAD5,
+		VK_NUMPAD6, VK_NUMPAD7, VK_NUMPAD8,
+		VK_NUMPAD9,
 
-		// NUMBER LINE
-		'0','1','2','3','4','5','6','7','8','9',
 
+		////Num Line
+		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 
 	};
 
@@ -80,7 +82,7 @@ namespace Nmy
 
 	eKeyState Input::GetKeystate(eKeyCode ekey)
 	{
-		return;
+		return mKeys[(UINT)ekey].stateKey;
 	}
 
 }

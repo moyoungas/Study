@@ -129,8 +129,11 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Drop.h" />
+    <ClInclude Include="DropManager.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Maths.h" />
+    <ClInclude Include="Missile.h" />
     <ClInclude Include="myNewApplication.h" />
     <ClInclude Include="NCommon.h" />
     <ClInclude Include="NmyEntity.h" />
@@ -145,7 +148,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Drop.cpp" />
+    <ClCompile Include="DropManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Missile.cpp" />
     <ClCompile Include="myNewApplication.cpp" />
     <ClCompile Include="NmyEntity.cpp" />
     <ClCompile Include="NmyInput.cpp" />

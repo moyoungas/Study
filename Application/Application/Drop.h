@@ -1,15 +1,16 @@
 #pragma once
+#pragma once
 #include "NCommon.h"
 #include "Actor.h"
 
 namespace Nmy
 {
 
-	class Missile : public Actor
+	class Drop : public Actor
 	{
 	public:
-		Missile();
-		~Missile();
+		Drop();
+		~Drop();
 
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
@@ -24,4 +25,3 @@ namespace Nmy
 
 
 }
-

@@ -1,12 +1,15 @@
 #pragma once
-#include "NmyScene.h"
 #include "NCommon.h"
+#include "NmyScene.h"
+#include "Drop.h"
+
+
 
 namespace Nmy
 {
 	class Scene;
 
-	class SceneManager
+	class DropManager
 	{
 	public:
 
@@ -19,9 +22,8 @@ namespace Nmy
 
 	private:
 		static Scene* mScene[(UINT)eSceneType::MAX];
+		static Drop* drop;
 		static Scene* mPlayScene;
 
 	};
-
-
 }

@@ -1,29 +1,28 @@
-#include "Missile.h"
+#include "Drop.h"
 #include "Time.h"
 
 namespace Nmy
 {
-	Missile::Missile()
-		:mSpeed(1.0f)
+	Drop::Drop()
+		: mSpeed(1.0f)
 	{
-		SetPos({ 100.0f,100.0f });
+		SetPos({ 10.0f,10.0f });
 		SetScale({ 50.0f,50.0f });
 	}
 
-	Missile::~Missile()
+	Drop::~Drop()
 	{
 	}
 
-	void Missile::Tick()
+	void Drop::Tick()
 	{
 		Vector2 pos = GetPos();
-		pos.y -= 200.0f * Time::DeltaTime();
+		pos.y += 150 * Time::DeltaTime();
 		SetPos(pos);
 	}
 
-	void Missile::Render(HDC hdc)
+	void Drop::Render(HDC hdc)
 	{
-
 		Vector2 pos = GetPos();
 		Vector2 mScale = GetScale();
 
@@ -31,3 +30,4 @@ namespace Nmy
 	}
 
 }
+

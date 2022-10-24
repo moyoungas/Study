@@ -2,6 +2,7 @@
 #include "SceneManager.h"
 #include "Time.h"
 #include "NmyInput.h"
+#include "DropManager.h"
 
 namespace Nmy
 {/*
@@ -16,13 +17,17 @@ namespace Nmy
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
+		/*DropManager::Initialize();*/
 	}
 
 	void Nmy::NewApplication::Tick()
 	{
 		Time::Tick();
 		Input::Tick();
-		SceneManager::Tick();
+
+		SceneManager::Tick();/*
+		DropManager::Tick();
+		DropManager::Render(mWindowdata.hdc);*/
 		SceneManager::Render(mWindowdata.hdc);
 		Input::Render(mWindowdata.hdc);
 		Time::Render(mWindowdata.hdc);
