@@ -4,34 +4,39 @@
 
 namespace Nmy
 {
+	std::list<Drop*> DropManager::falldrop[] = {};
+	Drop* DropManager::mdrop = nullptr;
 
-	Drop* DropManager::drop = nullptr;
+	DropManager::DropManager()
+	{
 
+	}
+	DropManager::~DropManager()
+	{
+
+
+	}
 	void DropManager::Initialize()
 	{
-		Drop* mDrop = new Drop[(UINT)10];
-		Scene* playScene = SceneManager::GetPlayScene();
+		Drop* dropball = new Drop();
 
-		for (size_t i = 0; i < 10; i++)
-		{
-			playScene->AddGameActor(mDrop);
-		}
+		mdrop = dropball;
 	}
 
 	void DropManager::Tick()
 	{
-		drop->Tick();
+			mdrop->Tick();
 	}
 
 	void DropManager::Render(HDC hdc)
 	{
-		drop->Render(hdc);
+		mdrop->Render(hdc);
 	}
 
 	void DropManager::Release()
 	{
-
-
+		// 프로그램이 종료될 때 한번만 호출
+		delete mdrop;
 	}
 
 }

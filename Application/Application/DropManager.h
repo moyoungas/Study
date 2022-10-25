@@ -12,18 +12,17 @@ namespace Nmy
 	class DropManager
 	{
 	public:
+		DropManager();
+		~DropManager();
 
 		static void Initialize();
 		static void Tick();
 		static void Render(HDC hdc);
 		static void Release();
 
-		static Scene* GetPlayScene() { return mPlayScene; }
 
 	private:
-		static Scene* mScene[(UINT)eSceneType::MAX];
-		static Drop* drop;
-		static Scene* mPlayScene;
-
+		static Drop* mdrop;
+		static std::list<Drop*> falldrop[5];
 	};
 }

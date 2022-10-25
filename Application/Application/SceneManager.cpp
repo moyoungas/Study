@@ -19,8 +19,6 @@ namespace Nmy
 		// 부모가 자식이 다운캐스팅
 		//Scene* t = new LogoScene();
 		//t->Initialize();
-
-
 	}
 
 	void SceneManager::Tick()

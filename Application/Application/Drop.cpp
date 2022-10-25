@@ -6,13 +6,15 @@ namespace Nmy
 	Drop::Drop()
 		: mSpeed(1.0f)
 	{
-		SetPos({ 10.0f,10.0f });
+		SetPos({ 10.0f , 10.0f });
 		SetScale({ 50.0f,50.0f });
 	}
 
 	Drop::~Drop()
 	{
+
 	}
+
 
 	void Drop::Tick()
 	{

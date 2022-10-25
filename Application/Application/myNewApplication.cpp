@@ -17,7 +17,7 @@ namespace Nmy
 		Time::Initialize();
 		Input::Initialize();
 		SceneManager::Initialize();
-		/*DropManager::Initialize();*/
+		DropManager::Initialize();
 	}
 
 	void Nmy::NewApplication::Tick()
@@ -25,9 +25,9 @@ namespace Nmy
 		Time::Tick();
 		Input::Tick();
 
-		SceneManager::Tick();/*
+		SceneManager::Tick();
 		DropManager::Tick();
-		DropManager::Render(mWindowdata.hdc);*/
+		DropManager::Render(mWindowdata.hdc);
 		SceneManager::Render(mWindowdata.hdc);
 		Input::Render(mWindowdata.hdc);
 		Time::Render(mWindowdata.hdc);
