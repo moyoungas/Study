@@ -11,8 +11,7 @@ namespace Nmy
 
 	void Nmy::NewApplication::Initialize(WindowDataA data)
 	{
-		mWindowdata = data;
-		mWindowdata.hdc = GetDC(data.hWnd);
+		initializeWindow(data);
 
 		Time::Initialize();
 		Input::Initialize();
@@ -25,12 +24,21 @@ namespace Nmy
 		Time::Tick();
 		Input::Tick();
 
+		// clear
+		Rectangle(mWindowdata.backBuffer,
+			-1, -1, mWindowdata.width + 1, mWindowdata.height + 1);
+
 		SceneManager::Tick();
+		SceneManager::Render(mWindowdata.backBuffer);
+
+		Input::Render(mWindowdata.backBuffer);
+		Time::Render(mWindowdata.backBuffer);
+
 		DropManager::Tick();
-		DropManager::Render(mWindowdata.hdc);
-		SceneManager::Render(mWindowdata.hdc);
-		Input::Render(mWindowdata.hdc);
-		Time::Render(mWindowdata.hdc);
+		DropManager::Render(mWindowdata.backBuffer);
+		// BitBlt 함수는 dc간에 이미지를 복사해주는 함수
+		BitBlt(mWindowdata.hdc, 0, 0, mWindowdata.width, mWindowdata.height
+			,mWindowdata.backBuffer, 0,0, SRCCOPY);
 
 	}
 
@@ -43,6 +51,35 @@ namespace Nmy
 	{
 		SceneManager::Release();
 		ReleaseDC(mWindowdata.hWnd, mWindowdata.hdc);
+	}
+
+	void NewApplication::initializeWindow(WindowDataA data)
+	{
+		mWindowdata = data;
+		mWindowdata.hdc = GetDC(data.hWnd);
+
+		// 비트맵 해상도를 설정하기 위한 실제 윈도우 크기 계산
+		RECT rect = { 0, 0, mWindowdata.width, mWindowdata.height };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+
+		// 윈도우 크기 변경
+		SetWindowPos(mWindowdata.hWnd, nullptr, 0, 0,
+			rect.right - rect.left,
+			rect.bottom - rect.top, 0
+		);
+
+		ShowWindow(mWindowdata.hWnd, true);
+
+		mWindowdata.backTexture 
+			= CreateCompatibleBitmap(mWindowdata.hdc, mWindowdata.width, mWindowdata.height);
+
+		mWindowdata.backBuffer
+			= CreateCompatibleDC(mWindowdata.hdc);
+
+		HBITMAP defalutBitmap 
+			= (HBITMAP)SelectObject(mWindowdata.backBuffer, mWindowdata.backTexture);
+
+		DeleteObject(defalutBitmap);
 	}
 
 }

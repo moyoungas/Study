@@ -24,7 +24,7 @@ namespace Nmy
 		NewApplication();
 		~NewApplication();
 
-
+		void initializeWindow(WindowDataA data);
 
 	private:
 		WindowDataA mWindowdata;

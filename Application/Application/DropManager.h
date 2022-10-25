@@ -2,7 +2,7 @@
 #include "NCommon.h"
 #include "NmyScene.h"
 #include "Drop.h"
-
+#include <queue>
 
 
 namespace Nmy
@@ -15,6 +15,8 @@ namespace Nmy
 		DropManager();
 		~DropManager();
 
+		static DropManager* GetDropManager() { return &dropmanager; }
+
 		static void Initialize();
 		static void Tick();
 		static void Render(HDC hdc);
@@ -22,7 +24,7 @@ namespace Nmy
 
 
 	private:
-		static Drop* mdrop;
-		static std::list<Drop*> falldrop[5];
+		static DropManager dropmanager;
+		static std::vector<Drop*> falldrop;
 	};
 }

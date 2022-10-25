@@ -3,10 +3,11 @@
 
 namespace Nmy
 {
+
 	Drop::Drop()
 		: mSpeed(1.0f)
 	{
-		SetPos({ 10.0f , 10.0f });
+		SetPos({ (float)(rand() % 1921) , 10.0f });
 		SetScale({ 50.0f,50.0f });
 	}
 
@@ -19,12 +20,18 @@ namespace Nmy
 	void Drop::Tick()
 	{
 		Vector2 pos = GetPos();
-		pos.y += 150 * Time::DeltaTime();
+		pos.y += 520 * Time::DeltaTime();
 		SetPos(pos);
 	}
 
 	void Drop::Render(HDC hdc)
 	{
+		HPEN colorPen = CreatePen(PS_SOLID, 2, RGB(rand() % 256, rand() % 256, rand() % 256));
+		Pen pen(hdc, colorPen);
+
+		HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
+		Brush brush(hdc, blackBrush);
+
 		Vector2 pos = GetPos();
 		Vector2 mScale = GetScale();
 

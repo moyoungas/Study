@@ -4,6 +4,7 @@
 #include "Missile.h"
 #include "SceneManager.h"
 #include "NmyScene.h"
+#include "NCommon.h"
 
 Nmy::Player::Player() 
 	: mSpeed(1.0f)
@@ -53,16 +54,23 @@ void Nmy::Player::Tick()
 
 	}
 
+
+
+
 	SetPos(pos);
 
 }
 
 void Nmy::Player::Render(HDC hdc)
 {
+	HBRUSH skyBrush = CreateSolidBrush(RGB(153, 204, 255));
+	Brush brush(hdc, skyBrush);
+
+	HPEN redPen = CreatePen(PS_SOLID , 2, RGB(255, 0, 0));
+	Pen pen(hdc, redPen);
+
 	Vector2 pos = GetPos();
 	Vector2 mScale = GetScale();
 
-
 	Rectangle(hdc, pos.x, pos.y, pos.x + mScale.x, pos.y + mScale.y);
-
 }

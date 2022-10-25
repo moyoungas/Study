@@ -16,7 +16,12 @@
 struct WindowDataA
 {
 	HWND hWnd;
-	HDC hdc;
+	HDC hdc; // 메인버퍼
+
+	// 렌더타겟, 프레임 버퍼
+	HBITMAP backTexture;
+	HDC backBuffer; // 백버퍼
+
 	UINT height;
 	UINT width;
 	
@@ -27,7 +32,52 @@ struct WindowDataA
 		UINT height = 0;
 		UINT width = 0;
 	}
+};
 
+struct Pen
+{
+private:
+	HDC mhdc;
+	HPEN oldPen;
+	HPEN asPen;
+public:
+	Pen(HDC hdc, HPEN mPen)
+		: mhdc(hdc)
+		, oldPen(NULL)
+		, asPen(mPen)
+	{
+		oldPen = (HPEN)SelectObject(mhdc, mPen);
+	}
 
+	~Pen()
+	{
+		SelectObject(mhdc, oldPen);
+		DeleteObject(asPen);
+	}
+
+};
+
+struct Brush
+{
+private:
+	HDC mhdc;
+	HBRUSH oldbrush;
+	HBRUSH mbrush;
+public:
+	Brush(HDC hdc, HBRUSH brush)
+		: mhdc(hdc)
+		, oldbrush(NULL)
+		, mbrush(brush)
+	{
+
+		oldbrush = (HBRUSH)SelectObject(mhdc, brush);
+	}
+
+	~Brush()
+	{
+
+		SelectObject(mhdc, oldbrush);
+		DeleteObject(mbrush);
+	}
 
 };
