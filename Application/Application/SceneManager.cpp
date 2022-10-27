@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include "NmyLogoScene.h"
+#include "TitleScene.h"
 
 
 namespace Nmy
@@ -11,6 +12,7 @@ namespace Nmy
 	{
 		// 모든 씬들을 초기화
 		mScene[(UINT)eSceneType::Logo] = new LogoScene;
+	/*	mScene[(UINT)eSceneType::Title] = new TitleScene;*/
 		mScene[(UINT)eSceneType::Logo]->Initialize();
 
 		mPlayScene = mScene[(UINT)eSceneType::Logo];

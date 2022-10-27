@@ -3,6 +3,7 @@
 #include "Time.h"
 #include "NmyInput.h"
 #include "DropManager.h"
+#include "MyResources.h"
 
 namespace Nmy
 {/*
@@ -15,6 +16,8 @@ namespace Nmy
 
 		Time::Initialize();
 		Input::Initialize();
+
+
 		SceneManager::Initialize();
 		DropManager::Initialize();
 	}
@@ -23,6 +26,8 @@ namespace Nmy
 	{
 		Time::Tick();
 		Input::Tick();
+
+		Brush brush(mWindowdata.backBuffer, mBrush[(UINT)eBrushColor::Gray]);
 
 		// clear
 		Rectangle(mWindowdata.backBuffer,
@@ -36,6 +41,7 @@ namespace Nmy
 
 		DropManager::Tick();
 		DropManager::Render(mWindowdata.backBuffer);
+
 		// BitBlt 함수는 dc간에 이미지를 복사해주는 함수
 		BitBlt(mWindowdata.hdc, 0, 0, mWindowdata.width, mWindowdata.height
 			,mWindowdata.backBuffer, 0,0, SRCCOPY);
@@ -50,7 +56,9 @@ namespace Nmy
 	Nmy::NewApplication::~NewApplication()
 	{
 		SceneManager::Release();
+		Resources::Release();
 		ReleaseDC(mWindowdata.hWnd, mWindowdata.hdc);
+		ReleaseDC(mWindowdata.hWnd, mWindowdata.backBuffer);
 	}
 
 	void NewApplication::initializeWindow(WindowDataA data)
@@ -80,6 +88,17 @@ namespace Nmy
 			= (HBITMAP)SelectObject(mWindowdata.backBuffer, mWindowdata.backTexture);
 
 		DeleteObject(defalutBitmap);
+
+		// 메모리 해제 필수
+		mPen[(UINT)ePenColor::RED] = CreatePen(PS_SOLID,2,RGB(255,0,0));
+		mPen[(UINT)ePenColor::GREEN] = CreatePen(PS_SOLID,2,RGB(255,0,0));
+		mPen[(UINT)ePenColor::BLUE] = CreatePen(PS_SOLID,2,RGB(255,0,0));
+
+
+		 mBrush[(UINT)eBrushColor::Transparent] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+		 mBrush[(UINT)eBrushColor::Black] = (HBRUSH)GetStockObject(BLACK_BRUSH);
+		 mBrush[(UINT)eBrushColor::White] = (HBRUSH)GetStockObject(WHITE_BRUSH);
+		 mBrush[(UINT)eBrushColor::Gray] = CreateSolidBrush(RGB(71, 71, 71));
 	}
 
 }

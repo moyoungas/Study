@@ -1,5 +1,5 @@
 #include "Actor.h"
-
+#include "NmyComponent.h"
 
 namespace Nmy
 {
@@ -11,6 +11,14 @@ namespace Nmy
 
 	Actor::~Actor()
 	{
+		for (Component* component : mComponents)
+		{
+			if (component == nullptr)
+				continue;
+			delete component;
+			component = nullptr;
+		}
+
 	}
 
 
@@ -20,11 +28,41 @@ namespace Nmy
 
 	void Actor::Tick()
 	{
+		// 모든 컴포넌트 tick을 호출
+
+		for (Component* component : mComponents)
+		{
+			if (component == nullptr)
+				continue;
+			component->Tick();
+
+		}
+
 	}
 
 	void Actor::Render(HDC hdc)
 	{
+		// 모든 컴포넌트 Render를 호출
+
+		for (Component* component : mComponents)
+		{
+			if (component == nullptr)
+				continue;
+			component->Render(hdc);
+
+		}
 	}
+
+	void Actor::AddComponent(Component* component)
+	{
+		mComponents.push_back(component);
+
+
+	}
+
+
+
+
 
 }
 

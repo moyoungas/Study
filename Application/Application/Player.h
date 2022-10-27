@@ -3,6 +3,7 @@
 
 namespace Nmy
 {
+	class image;
 
 	class Player : public Actor
 	{
@@ -13,11 +14,9 @@ namespace Nmy
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
 
-
-
 	private:
 		float mSpeed;
-
+		image* pImage;
 	};
 
 

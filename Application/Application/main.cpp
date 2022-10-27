@@ -27,6 +27,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    
+
     // TODO: 여기에 코드를 입력합니다.
 
     // 1. wndclass 정의 윈도우 기반(여러가지 속성)이 되는 클래스를 정의

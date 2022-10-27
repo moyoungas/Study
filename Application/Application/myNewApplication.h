@@ -1,6 +1,8 @@
 #pragma once
 
 #include "NCommon.h"
+#include "NmyScene.h"
+#include "Nmyimage.h"
 
 namespace Nmy
 {
@@ -16,8 +18,12 @@ namespace Nmy
 			return mInstance;
 		}
 
+		WindowDataA GetWindowdata() { return mWindowdata; }
+
 		void Initialize(WindowDataA data);
 		void Tick();
+
+		void SetPlaySceneNumber(int number) {}
 
 
 	private:
@@ -28,7 +34,8 @@ namespace Nmy
 
 	private:
 		WindowDataA mWindowdata;
-
+		HPEN mPen[(UINT)ePenColor::END];
+		HBRUSH mBrush[(UINT)eBrushColor::END];
 	};
 
 }

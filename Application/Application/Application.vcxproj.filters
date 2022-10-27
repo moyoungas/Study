@@ -40,6 +40,18 @@
     <Filter Include="Actor\base">
       <UniqueIdentifier>{67ee0a19-b6a6-45af-a558-ede16b59ce13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{6863fbba-7f93-4ce3-bf2b-33303f0a67e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{dfc99ba9-f718-4b18-8f1f-798a6f3c1a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Base">
+      <UniqueIdentifier>{aa6e5fa7-c1af-4eec-82ea-6a5c3a72147a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\base">
+      <UniqueIdentifier>{c6d258f2-13db-49c7-9d0b-3c7d4bcffd55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -72,9 +84,6 @@
     <ClInclude Include="NmyLogoScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="NmyScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Actor</Filter>
     </ClInclude>
@@ -95,6 +104,30 @@
     </ClInclude>
     <ClInclude Include="DropManager.h">
       <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyResource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Nmyimage.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="MyResources.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyComponent.h">
+      <Filter>Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyAnimator.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyCollider.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyScene.h">
+      <Filter>Scene\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -126,9 +159,6 @@
     <ClCompile Include="NmyLogoScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="NmyScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Actor.cpp">
       <Filter>Actor</Filter>
     </ClCompile>
@@ -149,6 +179,33 @@
     </ClCompile>
     <ClCompile Include="DropManager.cpp">
       <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyResource.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Nmyimage.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="MyResources.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Maths.cpp">
+      <Filter>NewEngine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyComponent.cpp">
+      <Filter>Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyAnimator.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyCollider.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyScene.cpp">
+      <Filter>Scene\base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
