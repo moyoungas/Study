@@ -1,7 +1,8 @@
 #include "SceneManager.h"
 #include "NmyLogoScene.h"
 #include "TitleScene.h"
-
+#include "NmyPlayScene.h"
+#include "NmyEndingScene.h"
 
 namespace Nmy
 {
@@ -12,10 +13,20 @@ namespace Nmy
 	{
 		// 모든 씬들을 초기화
 		mScene[(UINT)eSceneType::Logo] = new LogoScene;
-	/*	mScene[(UINT)eSceneType::Title] = new TitleScene;*/
 		mScene[(UINT)eSceneType::Logo]->Initialize();
 
-		mPlayScene = mScene[(UINT)eSceneType::Logo];
+		mScene[(UINT)eSceneType::Title] = new TitleScene;
+		mScene[(UINT)eSceneType::Title]->Initialize();
+
+
+		mScene[(UINT)eSceneType::Play] = new PlayScene;
+		mScene[(UINT)eSceneType::Play]->Initialize();
+
+
+		mScene[(UINT)eSceneType::End] = new EndScene;
+		mScene[(UINT)eSceneType::End]->Initialize();
+
+		ChangeScene(eSceneType::Logo);
 
 		// 자식이 부모로 업캐스팅
 		// 부모가 자식이 다운캐스팅
@@ -25,7 +36,6 @@ namespace Nmy
 
 	void SceneManager::Tick()
 	{
-
 		// 현재 씬만 업데이트
 		mPlayScene->Tick();
 	}
@@ -52,6 +62,22 @@ namespace Nmy
 			scene = nullptr;
 		}
 
+	}
+
+	void SceneManager::ChangeScene(eSceneType aType)
+	{
+		if (mPlayScene == nullptr)
+		{
+			mPlayScene = mScene[(UINT)eSceneType::Logo];
+		}
+		else
+		{
+			mPlayScene->Exit();
+
+			mPlayScene = mScene[(UINT)aType];
+		}
+
+		mPlayScene->Enter();
 	}
 
 }

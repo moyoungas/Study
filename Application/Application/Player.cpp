@@ -31,6 +31,7 @@ Nmy::Player::~Player()
 {
 }
 
+
 void Nmy::Player::Tick()
 {
 
@@ -60,7 +61,7 @@ void Nmy::Player::Tick()
 		Missile* missile = new Missile();
 		Scene* playScene = SceneManager::GetPlayScene();
 
-		playScene->AddGameActor(missile);
+		playScene->AddGameActor(missile, eColliderLayer::Player_Projecttile);
 
 		Vector2 playerPos = GetPos();
 		Vector2 playerScale = GetScale() / 2.0f;
@@ -101,7 +102,7 @@ void Nmy::Player::Render(HDC hdc)
 
 	Vector2 rect;
 	rect.x = pImage->GetWidth() * mScale.x;
-	rect.y = pImage->GetWidth() * mScale.y;
+	rect.y = pImage->GetHeight() * mScale.y;
 
 	TransparentBlt(hdc, finalPos.x, finalPos.y
 		, rect.x, rect.y, pImage->GetDc()

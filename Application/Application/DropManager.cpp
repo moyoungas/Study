@@ -19,11 +19,11 @@ namespace Nmy
 	}
 	void DropManager::Initialize()
 	{
-		Drop* mdrop = new Drop();
-		mdrop->SetPos({ (float)(rand() % 1921) , -1 });
-		Scene* playScene = SceneManager::GetPlayScene();
-		playScene->AddGameActor(mdrop);
-		falldrop.push_back(mdrop);
+		//Drop* mdrop = new Drop();
+		//mdrop->SetPos({ (float)(rand() % 1921) , -1 });
+		//Scene* playScene = SceneManager::GetPlayScene();
+		//playScene->AddGameActor(mdrop);
+		//falldrop.push_back(mdrop);
 	}
 
 	void DropManager::Tick()

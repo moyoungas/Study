@@ -44,3 +44,18 @@ enum class eComponentType
 
 
 };
+
+#define _COLLIDER_LAYER 16
+enum class eColliderLayer
+{
+	Defalut,
+	BackGround,
+	Tile,
+	Player,
+	Player_Projecttile,
+	Monster,
+	Monster_Projecttile,
+
+	UI = _COLLIDER_LAYER - 1,
+	End = 16,
+};

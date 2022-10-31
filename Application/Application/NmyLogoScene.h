@@ -17,6 +17,8 @@ namespace Nmy
 		virtual void Render(HDC hdc) override;
 
 
+		virtual void Enter();
+		virtual void Exit();
 
 	private:
 

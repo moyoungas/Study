@@ -10,7 +10,7 @@ namespace Nmy
 	public:
 		Player();
 		~Player();
-		
+
 		virtual void Tick() override;
 		virtual void Render(HDC hdc) override;
 

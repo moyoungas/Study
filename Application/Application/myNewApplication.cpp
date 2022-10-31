@@ -4,6 +4,7 @@
 #include "NmyInput.h"
 #include "DropManager.h"
 #include "MyResources.h"
+#include "ColliderManager.h"
 
 namespace Nmy
 {/*
@@ -19,28 +20,27 @@ namespace Nmy
 
 
 		SceneManager::Initialize();
-		DropManager::Initialize();
+		//DropManager::Initialize();
 	}
 
 	void Nmy::NewApplication::Tick()
 	{
 		Time::Tick();
 		Input::Tick();
+		SceneManager::Tick();
+		ColliderManager::Tick();
 
-		Brush brush(mWindowdata.backBuffer, mBrush[(UINT)eBrushColor::Gray]);
+		HBRUSH hPrevBrush = (HBRUSH)SelectObject(mWindowdata.backBuffer, mBrush[(UINT)eBrushColor::Gray]);
 
 		// clear
 		Rectangle(mWindowdata.backBuffer,
 			-1, -1, mWindowdata.width + 1, mWindowdata.height + 1);
+		SelectObject(mWindowdata.backBuffer, hPrevBrush);
 
-		SceneManager::Tick();
 		SceneManager::Render(mWindowdata.backBuffer);
 
 		Input::Render(mWindowdata.backBuffer);
 		Time::Render(mWindowdata.backBuffer);
-
-		DropManager::Tick();
-		DropManager::Render(mWindowdata.backBuffer);
 
 		// BitBlt 함수는 dc간에 이미지를 복사해주는 함수
 		BitBlt(mWindowdata.hdc, 0, 0, mWindowdata.width, mWindowdata.height

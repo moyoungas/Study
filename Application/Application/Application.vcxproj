@@ -129,8 +129,11 @@
   <ItemGroup>
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Application.h" />
+    <ClInclude Include="ColliderManager.h" />
     <ClInclude Include="Drop.h" />
     <ClInclude Include="DropManager.h" />
+    <ClInclude Include="NmyBGActor.h" />
+    <ClInclude Include="NmyEndingScene.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Maths.h" />
     <ClInclude Include="Missile.h" />
@@ -144,6 +147,8 @@
     <ClInclude Include="Nmyimage.h" />
     <ClInclude Include="NmyInput.h" />
     <ClInclude Include="NmyLogoScene.h" />
+    <ClInclude Include="NmyMonster.h" />
+    <ClInclude Include="NmyPlayScene.h" />
     <ClInclude Include="NmyResource.h" />
     <ClInclude Include="NmyScene.h" />
     <ClInclude Include="Player.h" />
@@ -155,8 +160,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="ColliderManager.cpp" />
     <ClCompile Include="Drop.cpp" />
     <ClCompile Include="DropManager.cpp" />
+    <ClCompile Include="NmyBGActor.cpp" />
+    <ClCompile Include="NmyEndingScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Maths.cpp" />
     <ClCompile Include="Missile.cpp" />
@@ -169,6 +177,8 @@
     <ClCompile Include="Nmyimage.cpp" />
     <ClCompile Include="NmyInput.cpp" />
     <ClCompile Include="NmyLogoScene.cpp" />
+    <ClCompile Include="NmyMonster.cpp" />
+    <ClCompile Include="NmyPlayScene.cpp" />
     <ClCompile Include="NmyResource.cpp" />
     <ClCompile Include="NmyScene.cpp" />
     <ClCompile Include="Player.cpp" />

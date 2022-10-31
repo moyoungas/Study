@@ -16,6 +16,7 @@ namespace Nmy
 		static void Release();
 
 		static Scene* GetPlayScene() { return mPlayScene; }
+		static void ChangeScene(eSceneType aType);
 
 	private:
 		static Scene* mScene[(UINT)eSceneType::MAX];

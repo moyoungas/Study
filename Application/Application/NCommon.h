@@ -6,6 +6,7 @@
 #include <map>
 #include <list>
 #include <iostream>
+#include <bitset>
 #include "def.h"
 #include "Maths.h"
 

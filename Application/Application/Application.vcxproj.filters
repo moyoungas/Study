@@ -52,6 +52,9 @@
     <Filter Include="Scene\base">
       <UniqueIdentifier>{c6d258f2-13db-49c7-9d0b-3c7d4bcffd55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="NewEngine\High level interface">
+      <UniqueIdentifier>{1365e79b-d794-4406-b612-810e96f1ba52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -65,9 +68,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>main</Filter>
-    </ClInclude>
-    <ClInclude Include="myNewApplication.h">
-      <Filter>NewEngine</Filter>
     </ClInclude>
     <ClInclude Include="NmyEntity.h">
       <Filter>NewEngine</Filter>
@@ -83,9 +83,6 @@
     </ClInclude>
     <ClInclude Include="NmyLogoScene.h">
       <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>Actor</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Actor\base</Filter>
@@ -129,6 +126,27 @@
     <ClInclude Include="NmyScene.h">
       <Filter>Scene\base</Filter>
     </ClInclude>
+    <ClInclude Include="myNewApplication.h">
+      <Filter>NewEngine\High level interface</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyPlayScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyEndingScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyBGActor.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Actor\base</Filter>
+    </ClInclude>
+    <ClInclude Include="NmyMonster.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Application.rc">
@@ -147,9 +165,6 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="myNewApplication.cpp">
-      <Filter>NewEngine</Filter>
-    </ClCompile>
     <ClCompile Include="NmyEntity.cpp">
       <Filter>NewEngine</Filter>
     </ClCompile>
@@ -158,9 +173,6 @@
     </ClCompile>
     <ClCompile Include="NmyLogoScene.cpp">
       <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor.cpp">
-      <Filter>Actor</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Actor\base</Filter>
@@ -206,6 +218,27 @@
     </ClCompile>
     <ClCompile Include="NmyScene.cpp">
       <Filter>Scene\base</Filter>
+    </ClCompile>
+    <ClCompile Include="myNewApplication.cpp">
+      <Filter>NewEngine\High level interface</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyPlayScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyEndingScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyBGActor.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Actor\base</Filter>
+    </ClCompile>
+    <ClCompile Include="NmyMonster.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderManager.cpp">
+      <Filter>Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

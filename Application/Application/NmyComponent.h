@@ -4,9 +4,13 @@
 
 namespace Nmy
 {
+	class Actor;
+
 	class Component : public Entity
 	{
 	public:
+		friend class Actor;
+
 		Component(eComponentType type);
 		Component() = delete;
 		virtual ~Component();
@@ -14,8 +18,11 @@ namespace Nmy
 		virtual void Tick() = 0;
 		virtual void Render(HDC hdc);
 
+		Actor* GetOwner() { return mOwner; }
+
 	private:
 		const eComponentType mType;
+		Actor* mOwner;
 	};
 
 }

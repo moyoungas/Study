@@ -18,15 +18,15 @@ namespace Nmy
 		virtual void Tick();
 		virtual void Render(HDC hdc);
 
-		void AddGameActor(Actor* actor);
 
+		virtual void Enter();
+		virtual void Exit();
+		void AddGameActor(Actor* actor, eColliderLayer type);
 
+		std::vector<Actor*>& GetActor(eColliderLayer type) { return mActor[(UINT)type]; }
 
 	private:
-		std::vector<Actor*> mActor;
+		std::vector<std::vector<Actor*>> mActor;
 	};
-
-
-
 }
 

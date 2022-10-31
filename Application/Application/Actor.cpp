@@ -55,7 +55,12 @@ namespace Nmy
 
 	void Actor::AddComponent(Component* component)
 	{
+		if (component == nullptr)
+			return;
+
 		mComponents.push_back(component);
+
+		component->mOwner = this;
 
 
 	}

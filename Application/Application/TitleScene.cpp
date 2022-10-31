@@ -1,6 +1,8 @@
 #include "TitleScene.h"
 #include "MyResources.h"
-
+#include "NmyInput.h"
+#include "SceneManager.h"
+#include "NmyBGActor.h"
 
 namespace Nmy
 {
@@ -18,14 +20,22 @@ namespace Nmy
 
 	}
 
+	void TitleScene::Enter()
+	{
+	}
+
+	void TitleScene::Exit()
+	{
+	}
+
 
 	void TitleScene::Initialize()
 	{
+		BGActor* bg = new BGActor();
+		bg->SetImage(L"TitleBG", L"TitleBG.bmp");
+		bg->Initialize();
 
-		if (mimage == nullptr)
-		{
-			mimage = Resources::Load<image>(L"Title", L"..\\Resource\\Title\\mainScreen.bmp");
-		}
+		AddGameActor(bg,eColliderLayer::BackGround);
 
 	}
 
@@ -33,29 +43,23 @@ namespace Nmy
 	{
 		Scene::Tick();
 
-		//if (_kbhit())
-		//{
-		//	char input = _getch();
-
-		//	if (input == '\r')
-		//	{
-
-		//		NewApplication::Getinstance().SetPlaySceneNumber((UINT)eSceneType::Logo);
-		//	}
-
-		//}
+		if (KEY_DOWN(eKeyCode::N))
+		{
+			SceneManager::ChangeScene(eSceneType::Play);
+		}
 
 	}
 
 	void TitleScene::Render(HDC hdc)
 	{
 
-		BitBlt(hdc, 0, 0
-			, mimage->GetWidth(), mimage->GetHeight()
-			, mimage->GetDc(), 0, 0, SRCCOPY);
-
-
 		Scene::Render(hdc);
+		wchar_t szFloat[50] = {};
+		swprintf_s(szFloat, 50, L"Title");
+		int strlen = wcsnlen_s(szFloat, 50);
+		TextOut(hdc, 10, 30, szFloat, strlen);
+
+
 	}
 
 

@@ -18,6 +18,9 @@ namespace Nmy
 		TitleScene();
 		~TitleScene();
 
+		virtual void Enter();
+		virtual void Exit();
+
 	private:
 		image* mimage;
 	};

@@ -18,12 +18,12 @@ namespace Nmy
 			return mInstance;
 		}
 
-		WindowDataA GetWindowdata() { return mWindowdata; }
-
 		void Initialize(WindowDataA data);
 		void Tick();
 
-		void SetPlaySceneNumber(int number) {}
+		WindowDataA GetWindowdata() { return mWindowdata; }
+		HPEN GetPen(ePenColor color) { return mPen[(UINT)color]; }
+		HBRUSH GetBrush(eBrushColor color) { return mBrush[(UINT)color]; }
 
 
 	private:
